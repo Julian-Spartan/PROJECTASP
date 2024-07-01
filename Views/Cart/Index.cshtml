@@ -1,0 +1,27 @@
+@model List<sit.Models.CartItem>
+
+<h2>Carrito de Compras</h2>
+
+<table>
+    <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Product.Name</td>
+            <td>@item.Quantity</td>
+            <td>@item.Product.Price</td>
+            <td>
+                <a href="@Url.Action("RemoveFromCart", "Cart", new { productId = item.Product.Id })">Eliminar</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<h3>Total: @Model.Sum(item => item.Product.Price * item.Quantity)</h3>
+
+<a href="@Url.Action("Index", "Home")">Continuar Comprando</a>
