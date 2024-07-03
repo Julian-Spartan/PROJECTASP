@@ -43,8 +43,8 @@ namespace sit.Controllers
             // Simula la obtención del producto desde la base de datos.
             var products = new List<Product>
             {
-                new Product { Id = 1, Name = "Product 1", Description = "Description 1", Price = 10.0m, ImageUrl = "product1.jpg" },
-                new Product { Id = 2, Name = "Product 2", Description = "Description 2", Price = 20.0m, ImageUrl = "product2.jpg" },
+                new Product { Id = 1, Name = "Buso y Calentador Nike", Description = "Description 1", Price = 120.0m, ImageUrl = "~/images/busonike.jpg" },
+                new Product { Id = 2, Name = "Tennis Nike V2 Runn", Description = "Description 2", Price = 110.0m, ImageUrl = "~/images/deportivo.png" },
                 // Agrega más productos según sea necesario
             };
             return products.FirstOrDefault(p => p.Id == productId);
